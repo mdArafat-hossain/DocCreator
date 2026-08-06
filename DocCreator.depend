@@ -1,0 +1,43 @@
+# depslib dependency file v1.0
+1786040007 source:e:\doccreator\zutils.cpp
+	<iostream>
+	<ctime>
+	<cctype>
+	"zutils.h"
+
+1786038117 e:\doccreator\zutils.h
+	<string>
+
+1786040241 source:e:\doccreator\resume.cpp
+	<iostream>
+	<string>
+	<cctype>
+	<ctime>
+	<fstream>
+	<sstream>
+	<filesystem>
+	"resume.h"
+	"zutils.h"
+	"login.h"
+
+1786039927 source:e:\doccreator\login.cpp
+	<iostream>
+	<cctype>
+	<ctime>
+	<fstream>
+	<filesystem>
+	"zutils.h"
+	"login.h"
+
+1786038433 e:\doccreator\login.h
+	<string>
+
+1786040359 source:e:\doccreator\main.cpp
+	<iostream>
+	"resume.h"
+	"zutils.h"
+	"login.h"
+
+1786040279 e:\doccreator\resume.h
+	<string>
+
