@@ -7,4 +7,5 @@ using namespace std;
 string Date_Time();
 void strnth(string password);
 int checkDigit(string lochoice);
+string file_path(string path);
 #endif // ZUTILS_H_INCLUDED

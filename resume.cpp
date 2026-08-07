@@ -9,12 +9,11 @@
 #include "zutils.h"
 #include "login.h"
 using namespace std;
-namespace fs = std::filesystem;
 
 void resume(string username)
     {
         cin.ignore();
-        string filename;
+        string filename,ppath,path2;
         string name, email, phone, address,pf;
         string objective,cchoice;
 
@@ -126,9 +125,22 @@ void resume(string username)
         cout << "\nSkill 4 : ";
         getline(cin, skill4);
 
+
+        cout<<"Enter file location : ";
+        getline(cin,ppath);
+
+        string path = file_path(ppath);
         string time = Date_Time();
-        string path = "E:\\DocCreator\\html_files";
-        string path2 = path + "\\" + username + "\\" + filename + "(Resume)" + time + ".html"; //E:\\DocCreator\\html_files\\Arafat\\arafat(Resume)_2026-07-28_1237.html
+        int l = path.length();
+        if(path[l-1]=='\\')
+        {
+            path2 = path + filename + "(Resume)" + time + ".html"; //E:\\arafat(Resume)_2026-07-28_1237.html
+        }
+        else
+        {
+            path2 = path + "\\\\" + filename + "(Resume)" + time + ".html"; //E:\\DocCreator\\arafat(Resume)_2026-07-28_1237.html
+        }
+
 
         ofstream file(path2);
 

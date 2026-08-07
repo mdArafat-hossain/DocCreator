@@ -97,10 +97,11 @@ int main()
                 cout<<"Invalid Choice";
 
             }
-            cout<<"\nWant to continue(Y/N) : ";
+            cout<<"\nWant to continue?(Y/N) : ";
             cin>>dchoice3;
             if(dchoice3=="Y" || dchoice3=="y")
             {
+                cout<<endl;
                 continue;
             }
             else

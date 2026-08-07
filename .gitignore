@@ -1,0 +1,15 @@
+# Build folders
+bin/
+obj/
+
+# Executables
+*.exe
+
+# Object files
+*.o
+
+# Dependency files
+*.depend
+
+# Generated HTML
+html_files/

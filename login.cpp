@@ -6,7 +6,6 @@
 #include "zutils.h"
 #include "login.h"
 using namespace std;
-namespace fs = std::filesystem;
 string login() //log in
     {
         string logchoice; //log in choice
@@ -100,9 +99,7 @@ string login() //log in
                     try
                     {
                         strnth(password);
-                        string folderpath = "E:\\DocCreator\\html_files\\" + username;
 
-                        fs::create_directories(folderpath);//create new folder
                         ofstream file("Data.txt",ios::app);
 
                         file<<username<<"|"<<password<<"|"<<email<<"|\n";

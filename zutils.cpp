@@ -1,4 +1,5 @@
 #include<iostream>
+#include<string>
 #include<ctime>
 #include<cctype>
 #include "zutils.h"
@@ -51,4 +52,18 @@ int checkDigit(string lochoice) // check if the password is digit or not
     int l2choice = stoi(lochoice);//converts string to int
     return l2choice;
 
+}
+string file_path(string path)
+{
+    for (int i = 0; i < path.length(); i++)
+    {
+        if (path[i] == '\\')
+        {
+            path.insert(i, "\\");
+            i++;
+        }
+    }
+
+
+    return path;
 }
