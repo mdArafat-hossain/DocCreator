@@ -3,6 +3,7 @@
 #include<ctime>
 #include<cctype>
 #include "zutils.h"
+
 using namespace std;
 string Date_Time() //generate date and time
 {
@@ -10,7 +11,7 @@ string Date_Time() //generate date and time
     tm* local= localtime(&now);
 
     char dt[100];
-    strftime(dt,sizeof(dt),"_%Y-%m-%d_%H%M",local);// year month date 24format hour Miniute
+    strftime(dt,sizeof(dt),"_%Y-%m-%d_%H%M",local);// year month date hour(24-format) Minute
     return dt;
 }
 void strnth(string password) //password strength check
@@ -18,7 +19,7 @@ void strnth(string password) //password strength check
     bool up=false,lp=false,dig=false,sp=false; //uppercase,lowercase,digit,special character
     if(password.length()<8)
         throw "Password must be at least 8 characters. ";
-    for(char ch : password)
+    for(char ch : password)//check all character of the string
     {
         if(isupper(ch))
             up=true;
@@ -40,17 +41,17 @@ void strnth(string password) //password strength check
 
 }
 
-int checkDigit(string lochoice) // check if the password is digit or not
+int checkDigit(string lochoice) // check if the password is digit
 {
     for(char ch : lochoice)
     {
         if(!isdigit(ch))
         {
-            return 0;
+            return 0; //if the password is not fully digit it'll return 0
         }
     }
-    int l2choice = stoi(lochoice);//converts string to int
-    return l2choice;
+    int l2choice = stoi(lochoice); //converts string to int
+    return l2choice; //return converted int value
 
 }
 string file_path(string path)

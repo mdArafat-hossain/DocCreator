@@ -8,8 +8,16 @@
 using namespace std;
 string login() //log in
     {
-        string logchoice; //log in choice
-        string username,password,email,line;
+        string logchoice,logchoice2; //log in choice
+        string username,password,email,line,pin;
+
+        cout<<"1.User 2.Admin\n";
+        cin>>logchoice;
+        int l2choice=checkDigit(log2choice);
+
+        if(l2choice==1)
+        {
+
         cout<<"1.Register \n2.Log in\n"<<endl;
 
         while(true)
@@ -163,6 +171,17 @@ string login() //log in
                 }
                 cout<<"Account Log in Failed"<<endl;
                 return "0";
+            }
+        }
+        }
+        else if(logchoice2==2)
+        {
+            cout<<"Enter Pin Number : ";
+            cin>>pin;
+            if(pin=="AdminPanel$5.23.6.11.28")
+            {
+                cout<<"Welcome Admin";
+                co
             }
         }
     }
