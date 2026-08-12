@@ -24,7 +24,7 @@ void admin(int logchoice)
     3.Add User
     4.Delete User
     5.View System Statistics*/
-    if(logchoice==1)
+    if(logchoice==1)//View all users
     {
 
     }
