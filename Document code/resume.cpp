@@ -1,7 +1,6 @@
 #include<iostream>
 #include<string>
-#include<cctype>
-#include<ctime>
+
 #include<fstream>
 #include<sstream>
 #include<filesystem>
@@ -34,50 +33,50 @@ void resume(string username)
         stringstream ss(name); // generate one word from multiple words (Arafat Hossain Rizve)== Arafat
         ss >> filename;
 
-        cout<<"\nProfessional Headline : ";
+        cout<<"Professional Headline : ";
         getline(cin,pf);
 
-        cout << "\nEmail : ";
+        cout << "Email : ";
         getline(cin,email);
 
-        cout << "\nPhone : ";
+        cout << "Phone : ";
         getline(cin,phone);
 
-        cout << "\nAddress : ";
+        cout << "Address : ";
         getline(cin,address);
 
-        cout << "\nCareer Objective : ";
+        cout << "Career Objective : ";
         getline(cin,objective);
 
         cout << "\nEducation\n";
         cout << "Degree : ";
         getline(cin,degree);
 
-        cout << "\nUniversity : ";
+        cout << "University : ";
         getline(cin,university);
 
-        cout << "\nYear : ";
+        cout << "Year : ";
         getline(cin,year);
 
-        cout << "\nCGPA : ";
+        cout << "CGPA : ";
         getline(cin,cgpa);
 
         cout<<"\nCollege : ";
         getline(cin,college);
 
-        cout<<"\nYear : ";
+        cout<<"Year : ";
         getline(cin,year2);
 
-        cout<<"\nGPA : ";
+        cout<<"GPA : ";
         getline(cin,gpa);
 
         cout<<"\nSchool : ";
         getline(cin,school);
 
-        cout<<"\nYear : ";
+        cout<<"Year : ";
         getline(cin,year3);
 
-        cout<<"\nGPA : ";
+        cout<<"GPA : ";
         getline(cin,gpa2);
 
         cout<<"Do you have any Experience ?(Y/N) ";
@@ -92,41 +91,41 @@ void resume(string username)
             cout<<"\nEnter Job title : ";
             getline(cin,title);
 
-            cout<<"\nJob Position : ";
+            cout<<"Job Position : ";
             getline(cin,position);
 
-            cout<<"\nJob Duration (Start year - End year)";
+            cout<<"Job Duration (Start year - End year) : ";
             getline(cin,duration);
 
             cout<<"\nEnter 3 Responsibilities"<<endl;
 
-            cout<<"\n1.";
+            cout<<"1.";
             getline(cin,work1);
 
-            cout<<"\n2.";
+            cout<<"2.";
             getline(cin,work2);
 
-            cout<<"\n3.";
+            cout<<"3.";
             getline(cin,work3);
 
 
         }
 
         cout << "\nEnter 4 Skills\n";
-        cout << "\nSkill 1 : ";
+        cout << "Skill 1 : ";
         getline(cin, skill1);
 
-        cout << "\nSkill 2 : ";
+        cout << "Skill 2 : ";
         getline(cin, skill2);
 
-        cout << "\nSkill 3 : ";
+        cout << "Skill 3 : ";
         getline(cin, skill3);
 
-        cout << "\nSkill 4 : ";
+        cout << "Skill 4 : ";
         getline(cin, skill4);
 
 
-        cout<<"Enter file location : ";
+        cout<<"\nEnter file location : ";
         getline(cin,ppath);
 
         string path = file_path(ppath);

@@ -32,6 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="adbout.cpp" />
+		<Unit filename="adbout.h" />
 		<Unit filename="login.cpp" />
 		<Unit filename="login.h" />
 		<Unit filename="main.cpp" />

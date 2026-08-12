@@ -1,0 +1,61 @@
+DocCreator Detailed Project Description
+
+DocCreator is a console-based document automation system developed using C++. The main purpose of the project is to simplify and automate the process of creating professional documents. Instead of manually formatting every document, users can select a document type, provide the required information, and let the system generate the document automatically.
+
+The system supports different types of documents such as CV/Resume, job application letters, invoices, receipts, quotations, salary slips, meeting minutes, project reports, lab reports, notices, memos, certificates, recommendation letters, and business letters.
+
+
+Programming Language: C++
+Programming Concepts: OOP, functions, structures, arrays, strings, file handling, conditional statements, loops, and modular programming
+File Handling: fstream, ifstream, and ofstream
+Data Storage: Local text files
+Document Generation: C++ generates and formats the document content
+Project Structure: Multiple .cpp and .h files for better organization and modularity
+Development Environment: COdeBlocks
+
+
+Main Features
+* User Registration & Login
+* Users can create accounts.
+* Login credentials are stored using file handling.
+* Authentication prevents unauthorized access.
+* Document Selection
+* Users can choose from multiple document types.
+* Each document has its own required fields and questions.
+* Automated Document Generation
+* The program collects user information.
+* It automatically places the information into the appropriate format.
+* Dates and other details can be generated automatically.
+* Automatic Calculations
+* Documents such as invoices, receipts, and salary slips can perform calculations automatically.
+* User information and document-related data are managed using C++ file handling.
+* Generated files can be stored and accessed later.
+* Users can keep track of previously generated documents.
+* This makes it easier to reuse or review previous work.
+
+Admin Panel
+* An administrator can manage users and system-related information.
+* It provides basic control over the application.
+* Problems the Project Solves
+
+DocCreator addresses these problems by:
+
+**Reducing document creation time
+**Reducing repetitive manual work
+**Minimizing calculation errors
+**Providing consistent document formatting
+**Organizing generated documents
+**Allowing users to reuse stored information
+**Providing multiple document types in one system
+**Making document creation accessible through a simple console interface
+
+Developed by The Chronicles Lab
+MD. Arafat Hossain Rizve (20254103075)
+MD. Abdul Ahnaf (20254103002)
+Md Moniruzzaman Chowdhury Pavel (20254103031)
+Tahniat Tasnim (20254103031)
+Mymuna Salahuddin (20255103003)
+
+Section :01 Intake :56 
+
+SDP 01

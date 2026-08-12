@@ -41,17 +41,17 @@ void strnth(string password) //password strength check
 
 }
 
-int checkDigit(string lochoice) // check if the password is digit
+int checkDigit(string choice) // check if the password is digit
 {
-    for(char ch : lochoice)
+    for(char ch : choice)
     {
         if(!isdigit(ch))
         {
             return 0; //if the password is not fully digit it'll return 0
         }
     }
-    int l2choice = stoi(lochoice); //converts string to int
-    return l2choice; //return converted int value
+    int digit = stoi(choice); //converts string to int
+    return digit; //return converted int value
 
 }
 string file_path(string path)
@@ -60,7 +60,7 @@ string file_path(string path)
     {
         if (path[i] == '\\')
         {
-            path.insert(i, "\\");
+            path.insert(i, "\\");// converts E:\DocCreator to E:\\DocCreator
             i++;
         }
     }
