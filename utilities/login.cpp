@@ -139,19 +139,18 @@ string login() //log in
                     cin.ignore();
                     cout<<"Company Name : ";
                     getline(cin,company_name);
-                    cout<<"Phone Number : ";
-                    getline(cin,phone);
                     cout<<"Address : ";
                     getline(cin,address);
+                    cout<<"Phone Number : ";
+                    getline(cin,phone);
 
                     ofstream file("Data.txt",ios::app);
-
-                    file<<username<<"|"<<password<<"|"<<email<<"|"<<company_name<<"|"<<phone<<"|"<<address<<"|\n";
+                    file<<username<<"|"<<password<<"|"<<email<<"|"<<company_name<<"|"<<address<<"|"<<phone<<"|\n";
                     file.close();
 
                     cout<<"\nAccount Created"<<endl<<endl;
 
-                    cout<<" Welcome "<<username<<","<<endl;
+                    cout<<"Welcome "<<username<<","<<endl;
 
                     return username;
 
@@ -209,7 +208,7 @@ string login() //log in
             {
                 cout<<"Enter Pin Number : ";
                 cin>>pin;
-                if(pin!="AdminPanel$5.23.6.11.28")
+                if(pin!="123")
                 {
                     i--;
                     cout<<"Wrong Pin.\n\n";
@@ -218,12 +217,12 @@ string login() //log in
                 else
                 {
                     i=0;
-                    cout<<" Welcome Admin, ";
+                    cout<<"Welcome Admin, ";
                     cout<<"What would you like to manage today? ";
-                    cout<<"1.View all users \n2.Search users \n3.Add User \n4.Delete User \n5.View System Statistics";
+                    cout<<"\n1.View all users \n2.Search users \n3.Add User \n4.Delete User \n5.View System Statistics";
                     while(true)
                     {
-                        cout<<"Choice : ";
+                        cout<<"\nChoice : ";
                         cin>>admin_choice;
                         int logchoice=checkDigit(admin_choice);
                         if(logchoice<6 && logchoice>0)
@@ -244,9 +243,9 @@ string login() //log in
         }
         else if(primary_choice==4)//about
         {
-            cout<<endl;
             about();
             return "0";
+
         }
         else
         {

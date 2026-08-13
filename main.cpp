@@ -23,24 +23,26 @@ void option2()
 int main()
 {
     cout<<string(40,'-')<<" DocCreator "<<string(40,'-');
+    bool state = true;
     string uchoice,rechoice;// document choice, repeat choice
+
     while(true)
     {
         string username = login();
         if(username=="guest")
         {
             options();
-            cout<<"\nWhat would you like to create today?\n"<<endl;
-            while(true)
+            cout<<"\nWhat would you like to create today?"<<endl;
+            while(state)
             {
                 cout<<"Choice : ";
                 cin>>uchoice;
-                cout<<endl;
                 int fichoice=checkDigit(uchoice);//final choice
 
                 if(fichoice==0)
                 {
-                    break;
+                    cout<<"Invalid Choice\n\n";
+                    continue;
                 }
                 else
                 {
@@ -48,55 +50,71 @@ int main()
                     {
                     case 1:
                         resume(username);
+                        state=false;
                         break;
                     case 2:
                         cout<<"2";
+                        state=false;
                         break;
                     case 3:
                         cout<<"3";
+                        state=false;
                         break;
                     case 4:
                         cout<<"4";
+                        state=false;
                         break;
                     case 5:
                         cout<<"5";
+                        state=false;
                         break;
                     case 6:
                         cout<<"6";
+                        state=false;
                         break;
                     case 7:
                         cout<<"7";
+                        state=false;
                         break;
                     case 8:
                         cout<<"8";
+                        state=false;
                         break;
                     case 9:
                         cout<<"9";
+                        state=false;
                         break;
                     case 10:
                         cout<<"10";
+                        state=false;
                         break;
                     case 11:
                         cout<<"11";
+                        state=false;
                         break;
                     case 12:
                         cout<<"12";
+                        state=false;
                         break;
                     case 13:
                         cout<<"13";
+                        state=false;
                         break;
                     case 14:
                         cout<<"14";
+                        state=false;
                         break;
                     case 15:
                         cout<<"15";
+                        state=false;
                         break;
                     case 16:
                         cout<<"16";
+                        state=false;
                         break;
 
                     default:
-                        cout<<"Invalid Choice";
+                        cout<<"Invalid Choice\n\n";
 
                     }
 
@@ -108,67 +126,78 @@ int main()
         {
             option2();
             cout<<"\nWhat would you like to create today?\n"<<endl;
-            while(true)
+            while(state)
             {
                 cout<<"Choice : ";
                 cin>>uchoice;
-                cout<<endl;
                 int fichoice=checkDigit(uchoice);//final choice
 
                 if(fichoice==0)
                 {
-                    break;
+                    cout<<"Invalid Choice\n\n";
                 }
                 else
                 {
                     switch(fichoice)
                     {
                     case 1:
-                        resume(username);
+                        cout<<"1";
+                        state=false;
                         break;
                     case 2:
                         cout<<"2";
+                        state=false;
                         break;
                     case 3:
                         cout<<"3";
+                        state=false;
                         break;
                     case 4:
                         cout<<"4";
+                        state=false;
                         break;
                     case 5:
                         cout<<"5";
+                        state=false;
                         break;
                     case 6:
                         cout<<"6";
+                        state=false;
                         break;
                     case 7:
                         cout<<"7";
+                        state=false;
                         break;
                     case 8:
                         cout<<"8";
+                        state=false;
                         break;
                     case 9:
                         cout<<"9";
+                        state=false;
                         break;
                     case 10:
                         cout<<"10";
+                        state=false;
                         break;
                     case 11:
                         cout<<"11";
+                        state=false;
                         break;
                     case 12:
                         cout<<"12";
+                        state=false;
                         break;
                     case 13:
                         cout<<"13";
+                        state=false;
                         break;
                     default:
-                        cout<<"Invalid Choice";
+                        cout<<"Invalid Choice\n\n";
 
                     }
 
                 }
-                cout<<"Company ok";
             }
         }
 
