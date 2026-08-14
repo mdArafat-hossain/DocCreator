@@ -7,10 +7,122 @@
 #include "login.h"
 #include "adbout.h"
 using namespace std;
+
+string registeruser()
+{
+    string username,password,company_name,email,phone,address,line,status,pin;
+    while(true)//username
+    {
+        bool exist = false;
+        while(true)
+        {
+            cout<<"\nEnter Username : ";
+            cin>>username;
+            if(!isalpha(username[0])) //username first character cannot be digit
+            {
+                cout<<"Error : The first character must be a letter (A–Z or a–z)"<<endl;
+            }
+            else
+            {
+                break;
+            }
+        }
+        ifstream file("Data.txt");
+        while(getline(file,line))//check every line of Data.txt
+        {
+            stringstream check(line);
+            string c_name;
+            getline(check,c_name,'|');
+            if(c_name==username)
+            {
+                exist = true;
+                break;
+            }
+        }
+        if(exist)
+        {
+            cout<<"Username Already Exist. Try a different one"<<endl;
+        }
+        else
+        {
+            break;
+        }
+        file.close();
+
+    }
+    while(true)//password
+    {
+        cout<<"Password : ";
+        cin>>password;
+        try
+        {
+            strnth(password); // check password strength
+            break;
+        }
+        catch(const char* msg)
+        {
+            cout<<"Error : "<<msg<<endl;
+        }
+
+    }
+    while(true)//email
+    {
+        bool dot=false;
+        int index=0,cont2=0;//counts how many at the dots are there
+        cout<<"Email Address  : ";
+        cin>>email;
+
+        for(int i=0; i<email.length(); i++)
+        {
+            if(email[i]=='@')
+            {
+                index=i;
+                cont2++;
+            }
+        }
+
+        if (cont2==1)
+        {
+            for(int j=index+1; j<email.length(); j++)
+            {
+                if(email[j]=='.')
+                {
+                    dot=true;
+                    break;
+                }
+            }
+        }
+
+        if(cont2==1 && dot)
+        {
+            break;
+        }
+        else
+        {
+            cout<<"Invalid Email\n"<<endl;
+        }
+    }
+    cin.ignore();
+    cout<<"Company Name : ";
+    getline(cin,company_name);
+    cout<<"Address : ";
+    getline(cin,address);
+    cout<<"Phone Number : ";
+    getline(cin,phone);
+    status="0";
+    ofstream file("Data.txt",ios::app);
+    file<<username<<"|"<<password<<"|"<<email<<"|"<<company_name<<"|"<<address<<"|"<<phone<<"|"<<status<<"|"<<"\n";
+    file.close();
+    update_docCount("Total Users");
+    cout<<"\nAccount Created"<<endl<<endl;
+    return username;
+}
+
+
 string login() //log in
 {
     string pri_choice,userlog,admin_choice; //log in choice
-    string username,password,company_name,Department,email,phone,address,website,CompanyID,TaxID,line,pin;
+    string username,password,company_name,email,phone,address,line,status,pin;
     string c_password; //confirm password
 
     cout<<"\n\n1.User \n2.Company \n3.Admin \n4.About\n\n";
@@ -43,117 +155,9 @@ string login() //log in
                 }
                 else if(logchoice==1) //register
                 {
-
-                    while(true)//username
-                    {
-                        bool exist = false;
-                        while(true)
-                        {
-                            cout<<"\nEnter Company Username : ";
-
-                            cin>>username;
-                            if(!isalpha(username[0])) //username first character cannot be digit
-                            {
-                                cout<<"Error : The first character must be a letter (A–Z or a–z)"<<endl;
-                            }
-                            else
-                            {
-                                break;
-                            }
-                        }
-                        ifstream file("Data.txt");
-                        while(getline(file,line))//check every line of Data.txt
-                        {
-                            stringstream check(line);
-                            string c_name;
-                            getline(check,c_name,'|');
-                            if(c_name==username)
-                            {
-                                exist = true;
-                                break;
-                            }
-                        }
-                        if(exist)
-                        {
-                            cout<<"Username Already Exist. Try a different one"<<endl;
-                        }
-                        else
-                        {
-                            break;
-                        }
-                        file.close();
-
-                    }
-                    while(true)//password
-                    {
-                        cout<<"Password : ";
-                        cin>>password;
-                        try
-                        {
-                            strnth(password); // check password strength
-                            break;
-                        }
-                        catch(const char* msg)
-                        {
-                            cout<<"Error : "<<msg<<endl;
-                        }
-
-                    }
-                    while(true)//email
-                    {
-                        bool dot=false;
-                        int index=0,cont2=0;//counts how many at the dots are there
-                        cout<<"Email Address  : ";
-                        cin>>email;
-
-                        for(int i=0; i<email.length(); i++)
-                        {
-                            if(email[i]=='@')
-                            {
-                                index=i;
-                                cont2++;
-                            }
-                        }
-
-                        if (cont2==1)
-                        {
-                            for(int j=index+1; j<email.length(); j++)
-                            {
-                                if(email[j]=='.')
-                                {
-                                    dot=true;
-                                    break;
-                                }
-                            }
-                        }
-
-                        if(cont2==1 && dot)
-                        {
-                            break;
-                        }
-                        else
-                        {
-                            cout<<"Invalid Email\n"<<endl;
-                        }
-                    }
-                    cin.ignore();
-                    cout<<"Company Name : ";
-                    getline(cin,company_name);
-                    cout<<"Address : ";
-                    getline(cin,address);
-                    cout<<"Phone Number : ";
-                    getline(cin,phone);
-
-                    ofstream file("Data.txt",ios::app);
-                    file<<username<<"|"<<password<<"|"<<email<<"|"<<company_name<<"|"<<address<<"|"<<phone<<"|\n";
-                    file.close();
-
-                    cout<<"\nAccount Created"<<endl<<endl;
-
-                    cout<<"Welcome "<<username<<","<<endl;
-
-                    return username;
-
+                    string user=registeruser();
+                    cout<<"Welcome "<<user<<","<<endl;
+                    return user;
                 }
                 else //log in
                 {

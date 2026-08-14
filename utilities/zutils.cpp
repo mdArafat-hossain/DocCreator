@@ -2,6 +2,7 @@
 #include<string>
 #include<ctime>
 #include<cctype>
+#include<fstream>
 #include "zutils.h"
 
 using namespace std;
@@ -67,4 +68,70 @@ string file_path(string path)
 
 
     return path;
+}
+
+void update_count(string user)
+{
+    ifstream file("Data.txt");
+    ofstream temp("temp.txt");
+    string username,password,email,company_name,address,phone,status;
+
+    while(getline(file,username,'|') && getline(file,password,'|') && getline(file,email,'|') && getline(file,company_name,'|') && getline(file,address,'|') && getline(file,phone,'|') && getline(file,status,'|'))
+    {
+        if(user==username)
+        {
+            int n=stoi(status);
+            n++;
+            status=to_string(n);
+        }
+        temp<<username<<"|"<<password<<"|"<<email<<"|"<<company_name<<"|"<<address<<"|"<<phone<<"|"<<status<<"|";
+    }
+
+
+    file.close();
+    temp.close();
+
+    remove("Data.txt");
+    rename("temp.txt","Data.txt");
+
+}
+
+void update_docCount(string input)
+{
+    ifstream file("statistics.txt");
+    ofstream temp("temp.txt");
+
+    string line;
+
+    while (getline(file, line))
+    {
+        if (line.find(input) != string::npos)
+        {
+            if(input=="Total Users")
+            {
+                int pos = line.find(':');
+                int count = stoi(line.substr(pos + 1));
+
+                count++;
+
+                line = input + " : " + to_string(count);
+            }
+            else
+            {
+                int pos = line.find(':');
+                int count = stoi(line.substr(pos + 1));
+
+                count++;
+
+                line = "** " + input + " : " + to_string(count);
+            }
+        }
+        temp << line << endl;
+    }
+
+    file.close();
+    temp.close();
+
+    remove("statistics.txt");
+    rename("temp.txt", "statistics.txt");
 }

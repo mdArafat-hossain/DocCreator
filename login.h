@@ -5,5 +5,6 @@
 using namespace std;
 
 string login();
+string registeruser();
 
 #endif // LOGIN_H_INCLUDED
