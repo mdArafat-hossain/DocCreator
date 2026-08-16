@@ -1,6 +1,5 @@
 #include<iostream>
 #include<string>
-
 #include<fstream>
 #include<sstream>
 #include<filesystem>
@@ -9,7 +8,7 @@
 #include "login.h"
 using namespace std;
 
-void resume(string username)
+void resume()
     {
         cin.ignore();
         string filename,ppath,path2;
@@ -214,7 +213,7 @@ void resume(string username)
         }
         else
         {
-            file<<"</h1>" << title <<"</h1>";
+            file<<"<h1>" << title <<"</h1>";
             file<<" || " << position <<" || "<< duration;
             file<<"<p>"<<"1. " <<work1<<"</p>";
             file<<"<p>"<<"2. " <<work2<<"</p>";

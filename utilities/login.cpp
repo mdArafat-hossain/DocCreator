@@ -111,7 +111,7 @@ string registeruser()
     getline(cin,phone);
     status="0";
     ofstream file("Data.txt",ios::app);
-    file<<username<<"|"<<password<<"|"<<email<<"|"<<company_name<<"|"<<address<<"|"<<phone<<"|"<<status<<"|"<<"\n";
+    file<<username<<"|"<<password<<"|"<<email<<"|"<<company_name<<"|"<<address<<"|"<<phone<<"|"<<status<<"|\n";
     file.close();
     update_docCount("Total Users");
     cout<<"\nAccount Created"<<endl<<endl;

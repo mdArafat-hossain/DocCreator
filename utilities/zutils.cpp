@@ -3,6 +3,7 @@
 #include<ctime>
 #include<cctype>
 #include<fstream>
+#include<limits>
 #include "zutils.h"
 
 using namespace std;
@@ -44,6 +45,10 @@ void strnth(string password) //password strength check
 
 int checkDigit(string choice) // check if the password is digit
 {
+    if(choice.empty())
+    {
+        return 0;
+    }
     for(char ch : choice)
     {
         if(!isdigit(ch))
@@ -78,14 +83,16 @@ void update_count(string user)
 
     while(getline(file,username,'|') && getline(file,password,'|') && getline(file,email,'|') && getline(file,company_name,'|') && getline(file,address,'|') && getline(file,phone,'|') && getline(file,status,'|'))
     {
+        file.ignore(numeric_limits<streamsize>::max(), '\n');
         if(user==username)
         {
             int n=stoi(status);
             n++;
             status=to_string(n);
         }
-        temp<<username<<"|"<<password<<"|"<<email<<"|"<<company_name<<"|"<<address<<"|"<<phone<<"|"<<status<<"|";
+        temp<<username<<"|"<<password<<"|"<<email<<"|"<<company_name<<"|"<<address<<"|"<<phone<<"|"<<status<<"|\n";
     }
+
 
 
     file.close();

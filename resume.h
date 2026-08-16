@@ -2,6 +2,6 @@
 #define RESUME_H_INCLUDED
 #include<string>
 using namespace std;
-void resume(string username);
+void resume();
 
 #endif // RESUME_H_INCLUDED
