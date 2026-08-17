@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<title>Invoice - 2</title>
+<style>
+body {font-family: Arial, sans-serif;background: #f4f6f8;margin: 0;padding: 40px;color: #333;}
+.invoice {max-width: 900px;margin: auto;background: white;padding: 40px;box-shadow: 0 0 15px rgba(0,0,0,0.1);}
+.header {display: flex;justify-content: space-between;border-bottom: 3px solid #333;padding-bottom: 20px;}
+.company h1 {margin: 0;font-size: 28px;}
+.invoice-title {text-align: right;}
+.invoice-title h2 {margin: 0;font-size: 32px;}
+.info {display: flex;justify-content: space-between;margin-top: 30px;margin-bottom: 30px;}
+.box {width: 45%;}
+.box h3 {margin-bottom: 8px;}
+table {width: 100%;border-collapse: collapse;margin-top: 20px;}
+th {background: #333;color: white;padding: 12px;text-align: left;}
+td {padding: 12px;border-bottom: 1px solid #ddd;}
+.number {text-align: right;}
+.totals {width: 350px;margin-left: auto;margin-top: 30px;}
+.total-row {display: flex;justify-content: space-between;padding: 8px;}
+.grand-total {font-size: 20px;font-weight: bold;border-top: 2px solid #333;padding-top: 12px;}
+.footer {margin-top: 50px;text-align: center;border-top: 1px solid #ddd;padding-top: 20px;}
+</style>
+</head>
+<body>
+<div class='invoice'>
+<div class='header'>
+<div class='company'>
+<h1>Tahniat Enterprice</h1>
+<p>68 Green Road, Dhanmondi<br>01795140999<br>TahniatTasnim@gmail.com</p>
+</div>
+<div class='invoice-title'>
+<h2>INVOICE</h2>
+<p><strong>Invoice #:</strong> 2<br><strong>Date:</strong> 18 August, 2026</p>
+</div>
+</div>
+<div class='info'>
+<div class='box'>
+<h3>Bill To:</h3>
+Md Arafat Hossain Rizve<br>Mirpur 12, Dhaka<br>01952340006<br>mdarafathossainrivze.dev@gmail.com</div>
+</div>
+<table>
+<tr><th>#</th><th>Item / Service</th><th>Quantity</th><th>Unit Price</th><th>Total</th></tr>
+<tr><td>1</td><td>TF-100</td><td>1</td><td>1450.00 tk</td><td>1450.00 tk</td></tr>
+<tr><td>2</td><td>T3 Pro ANC</td><td>1</td><td>1550.00 tk</td><td>1550.00 tk</td></tr>
+</table>
+<div class='totals'>
+<div class='total-row'><span>Subtotal:</span><span>3000.00 tk</span></div>
+<div class='total-row'><span>Tax/VAT (15.00%):</span><span>450.00 tk</span></div>
+<div class='total-row'><span>Discount:</span><span>750.00 tk</span></div>
+<div class='total-row grand-total'><span>Grand Total:</span><span>2700.00 tk</span></div>
+</div>
+<div class='footer'>
+<p>Thank you for your business!</p>
+</div>
+</div>
+</body>
+</html>

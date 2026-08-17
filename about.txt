@@ -2,13 +2,13 @@ DocCreator Detailed Project Description
 
 DocCreator is a console-based document automation system developed using C++. The main purpose of the project is to simplify and automate the process of creating professional documents. Instead of manually formatting every document, users can select a document type, provide the required information, and let the system generate the document automatically.
 
-The system supports different types of documents such as CV/Resume, job application letters, invoices, receipts, quotations, salary slips, meeting minutes, project reports, lab reports, notices, memos, certificates, recommendation letters, and business letters.
+The system supports different types of documents such as CV/Resume, job application letters, Leave application letters, invoices, receipts, quotations, purchase order, salary slips, meeting minutes, notices, memos, certificates, medical certificates, recommendation letters and business letters.
 
 
 Programming Language: C++
-Programming Concepts: OOP, functions, structures, arrays, strings, file handling, conditional statements, loops, and modular programming
+Programming Concepts: Functions, strings, file handling, conditional statements, loops and modular programming
 File Handling: fstream, ifstream, and ofstream
-Data Storage: Local text files
+Data Storage: Local text files (Data.txt , about.txt , Statistics.txt)
 Document Generation: C++ generates and formats the document content
 Project Structure: Multiple .cpp and .h files for better organization and modularity
 Development Environment: COdeBlocks
@@ -39,7 +39,6 @@ Admin Panel
 * Problems the Project Solves
 
 DocCreator addresses these problems by:
-
 **Reducing document creation time
 **Reducing repetitive manual work
 **Minimizing calculation errors

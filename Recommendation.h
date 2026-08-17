@@ -1,0 +1,6 @@
+#ifndef RECOMMENDATION_H_INCLUDED
+#define RECOMMENDATION_H_INCLUDED
+
+void recommendation();
+
+#endif // RECOMMENDATION_H_INCLUDED

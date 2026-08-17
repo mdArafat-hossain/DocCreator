@@ -1,0 +1,6 @@
+#ifndef LEAVE_APPLICATION_H_INCLUDED
+#define LEAVE_APPLICATION_H_INCLUDED
+
+void leave_Application();
+
+#endif // LEAVE_APPLICATION_H_INCLUDED

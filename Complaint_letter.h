@@ -1,0 +1,6 @@
+#ifndef COMPLAINT_LETTER_H_INCLUDED
+#define COMPLAINT_LETTER_H_INCLUDED
+
+void complaint();
+
+#endif // COMPLAINT_LETTER_H_INCLUDED

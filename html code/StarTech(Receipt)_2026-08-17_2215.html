@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>Receipt - STLPM-2026-011658</title>
+<style>
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 30px 10px;
+    background: #eeeeee;
+    font-family: 'Courier New', monospace;
+    color: #555555;
+}
+.receipt {
+    width: 520px;
+    max-width: 100%;
+    margin: auto;
+    background: #ffffff;
+    padding: 40px 30px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.10);
+}
+.business {
+    text-align: center;
+    margin-bottom: 35px;
+}
+.business h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #555555;
+}
+.tagline {
+    margin-top: 8px;
+    font-size: 17px;
+    letter-spacing: 2px;
+}
+.receipt-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 35px;
+    letter-spacing: 2px;
+}
+.info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+.separator {
+    border-top: 2px solid #999999;
+    margin: 15px 0;
+}
+.dashed {
+    border-top: 3px dashed #777777;
+    margin: 15px 0;
+}
+.items-header,
+.item {
+    display: grid;
+    grid-template-columns: 70px 45px 1fr 90px;
+    column-gap: 5px;
+    align-items: start;
+}
+.items-header {
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+.item {
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 5px 0;
+}
+.right {
+    text-align: right;
+}
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 17px;
+    margin: 12px 0;
+}
+.total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 21px;
+    font-weight: bold;
+    margin: 18px 0;
+}
+.payment {
+    margin-top: 35px;
+    font-size: 16px;
+}
+.payment-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 12px 0;
+}
+.footer {
+    text-align: center;
+    border-top: 1px solid #888888;
+    margin-top: 40px;
+    padding-top: 35px;
+}
+.thank-you {
+    font-size: 19px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+.barcode {
+    height: 55px;
+    width: 280px;
+    margin: auto;
+    background: repeating-linear-gradient(
+        90deg,
+        #555555 0px,
+        #555555 4px,
+        white 4px,
+        white 7px,
+        #555555 7px,
+        #555555 9px,
+        white 9px,
+        white 13px
+    );
+}
+.receipt-number {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 13px;
+}
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    .receipt {
+        width: 100%;
+        box-shadow: none;
+    }
+}
+</style>
+</head>
+<body>
+<div class='receipt'>
+<div class='business'>
+<h1>StarTech</h1>
+<div class='tagline'>TOTAL IT SOLUTION</div>
+</div>
+<div class='receipt-title'>
+*** RECEIPT ***
+</div>
+<div class='info'>
+<span>CASHIER: Mymuna Salahuddin</span>
+<span>17/08/2026 - 10:14 PM</span>
+</div>
+<div class='separator'></div>
+<div class='items-header'>
+<div>ITEM</div>
+<div>QTY</div>
+<div>DESCRIPTION</div>
+<div class='right'>COST</div>
+</div>
+<div class='separator'></div>
+<div class='item'>
+<div>T3</div>
+<div>1</div>
+<div>ANC Pro Wireless Earbuds @1550.00tk</div>
+<div class='right'>1550.00tk</div>
+</div>
+<div class='item'>
+<div>TF100</div>
+<div>1</div>
+<div>Wired Gaming Combo Keyboard @1450.00tk</div>
+<div class='right'>1450.00tk</div>
+</div>
+<div class='dashed'></div>
+<div class='summary-row'>
+<span>SUBTOTAL</span>
+<span>3000.00 tk</span>
+</div>
+<div class='dashed'></div>
+<div class='total'>
+<span>TOTAL AMOUNT</span>
+<span>3000.00 tk</span>
+</div>
+<div class='payment'>
+<div class='payment-row'>
+<span>PAYMENT METHOD</span>
+<span>Cash</span>
+</div>
+<div class='payment-row'>
+<span>APPROVAL NUMBER</span>
+<span>#SO-STLPM-Tauhid1601</span>
+</div>
+</div>
+<div class='footer'>
+<div class='thank-you'>
+THANK YOU FOR SHOPPING!
+</div>
+<div class='barcode'></div>
+<div class='receipt-number'>
+RECEIPT #STLPM-2026-011658
+</div>
+</div>
+</div>
+</body>
+</html>

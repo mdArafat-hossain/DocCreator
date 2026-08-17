@@ -1,0 +1,6 @@
+#ifndef MEDICAL_CERTIFICATE_H_INCLUDED
+#define MEDICAL_CERTIFICATE_H_INCLUDED
+
+void medical_certificate();
+
+#endif // MEDICAL_CERTIFICATE_H_INCLUDED

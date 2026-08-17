@@ -1,18 +1,18 @@
-Total Users : 6
-** Resume Generated : 2
-** Job Application Letter Generated : 0
-** Leave Application Generated : 1
-** Invoice Generated : 0
-** Receipt Generated : 0
+Total Users : 5
+** Resume Generated : 3
+** Job Application Letter Generated : 1
+** Leave Application Generated : 2
+** Invoice Generated : 5
+** Receipt Generated : 1
 ** Quotation Generated : 0
-** Purchase Order Generated : 1
+** Purchase Order Generated : 2
 ** Salary Slip Generated : 1
 ** Medical Certificate (Template) Generated : 0
 ** Meeting Minutes Generated : 4
-** Assignment Cover Page Generated : 0
-** Certificate Generated : 1
+** Assignment Cover Page Generated : 2
+** Certificate Generated : 2
 ** Recommendation Letter Generated : 0
 ** Complaint Letter Generated : 0
 ** Business Letter Generated : 2
 ** Notice Generated : 0
-** Memo Generated : 2
+** Memo Generated : 3

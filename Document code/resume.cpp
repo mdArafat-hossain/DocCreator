@@ -1,11 +1,12 @@
 #include<iostream>
 #include<string>
 #include<fstream>
-#include<sstream>
 #include<filesystem>
-#include "resume.h"
+#include<sstream>
 #include "zutils.h"
 #include "login.h"
+#include "resume.h"
+
 using namespace std;
 
 void resume()
@@ -28,9 +29,6 @@ void resume()
 
         cout << "Full Name : ";
         getline(cin,name);
-
-        stringstream ss(name); // generate one word from multiple words (Arafat Hossain Rizve)== Arafat
-        ss >> filename;
 
         cout<<"Professional Headline : ";
         getline(cin,pf);
@@ -126,6 +124,9 @@ void resume()
 
         cout<<"\nEnter file location : ";
         getline(cin,ppath);
+
+        stringstream ss(name); // generate one word from multiple words (Arafat Hossain Rizve)== Arafat
+        ss >> filename;
 
         string path = file_path(ppath);
         string time = Date_Time();

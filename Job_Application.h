@@ -1,0 +1,6 @@
+#ifndef JOB_APPLICATION_H_INCLUDED
+#define JOB_APPLICATION_H_INCLUDED
+
+void Job_Application();
+
+#endif // JOB_APPLICATION_H_INCLUDED
