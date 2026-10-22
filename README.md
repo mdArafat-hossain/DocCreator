@@ -20,12 +20,9 @@ The project demonstrates practical C++ programming, file handling, modular code 
 - **Compiler:** MinGW
 
 ## Screenshots
-
-Screenshots of the application and generated documents will be added here.
-
-![Main Menu](ScreenShots/Main-Menu.png)
-![Invoice Generation](ScreenShots/Invoice-Code.png)
-![Generated Invoice](ScreenShotss/Inovice.png)
+![Main Menu](ScreenShot/Main-Menu.png)
+![Invoice Generation](ScreenShot/Invoice-Code.png)
+![Generated Invoice](ScreenShot/Generated-Invoice.png)
 
 
 ## Getting Started
