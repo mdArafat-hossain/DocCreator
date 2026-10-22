@@ -14,7 +14,7 @@ void Certificate(string sorganization_name)
     string filename,ppath,path2;
     string name, course, organization, date;
 
-    cout << "\n===== Resume Generator (HTML) =====\n\n";
+    cout << "\n===== Certificate Generator (HTML) =====\n\n";
 
     cout << "Enter Recipient Name: ";
     getline(cin, name);

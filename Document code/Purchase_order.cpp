@@ -164,7 +164,7 @@ void purchase_order(string sname, string saddress)
     cout<<"\nEnter file location : ";
     getline(cin,ppath);
 
-    stringstream ss(buyerName); // generate one word from multiple words (Arafat Hossain Rizve)== Arafat
+    stringstream ss(buyerName);
     ss >> filename;
 
     string path = file_path(ppath);
@@ -172,11 +172,11 @@ void purchase_order(string sname, string saddress)
     int l = path.length();
     if(path[l-1]=='\\')
     {
-        path2 = path + filename + "(Resume)" + time + ".html"; //E:\\arafat(Resume)_2026-07-28_1237.html
+        path2 = path + filename + "(Resume)" + time + ".html";
     }
     else
     {
-        path2 = path + "\\\\" + filename + "(Resume)" + time + ".html"; //E:\\DocCreator\\arafat(Resume)_2026-07-28_1237.html
+        path2 = path + "\\\\" + filename + "(Resume)" + time + ".html";
     }
 
     ofstream file(path2);

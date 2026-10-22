@@ -16,7 +16,7 @@ void invoice(string sname, string saddress, string sphone, string semail)
     string customerName, customerAddress, customerPhone, customerEmail;
     string invoiceNumber, invoiceDate;
 
-    int itemCount;
+    int itemCount=0;
     double subtotal = 0;
     double taxRate, discount;
     double taxAmount, grandTotal;
@@ -68,15 +68,14 @@ void invoice(string sname, string saddress, string sphone, string semail)
     cout << "\nEnter number of items: ";
     cin >> itemCount;
 
-    stringstream ss(sellerName); // generate one word from multiple words (Arafat Hossain Rizve)== Arafat
-    ss >> filename;
 
-    while (cin.fail() || itemCount <= 0)
+
+    while (cin.fail() || itemCount <= 0 && itemCount > 100)
     {
         cin.clear();
         cin.ignore(1000, '\n');
 
-        cout << "Invalid input! Enter a valid number of items: ";
+        cout << "Invalid input! Enter a valid number of items (1-100): ";
         cin >> itemCount;
     }
 
@@ -157,6 +156,9 @@ void invoice(string sname, string saddress, string sphone, string semail)
     grandTotal = subtotal + taxAmount - discount;
     cin.ignore();
 
+     stringstream ss(sellerName);
+    ss >> filename;
+
     cout<<"\nEnter file location : ";
     getline(cin,ppath);
 
@@ -165,11 +167,11 @@ void invoice(string sname, string saddress, string sphone, string semail)
     int l = path.length();
     if(path[l-1]=='\\')
     {
-        path2 = path + filename + "(Invoice)" + time + ".html"; //E:\\arafat(Resume)_2026-07-28_1237.html
+        path2 = path + filename + "(Invoice)" + time + ".html";
     }
     else
     {
-        path2 = path + "\\\\" + filename + "(Invoice)" + time + ".html"; //E:\\DocCreator\\arafat(Resume)_2026-07-28_1237.html
+        path2 = path + "\\\\" + filename + "(Invoice)" + time + ".html";
     }
 
     ofstream file(path2);

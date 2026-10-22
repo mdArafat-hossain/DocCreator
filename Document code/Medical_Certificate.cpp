@@ -83,7 +83,7 @@ void medical_certificate()
     cout<<"\nEnter file location : ";
         getline(cin,ppath);
 
-        stringstream ss(patientName); // generate one word from multiple words (Arafat Hossain Rizve)== Arafat
+        stringstream ss(patientName);
         ss >> filename;
 
         string path = file_path(ppath);

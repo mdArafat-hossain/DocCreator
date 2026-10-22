@@ -25,6 +25,7 @@
 
 using namespace std;
 
+//user options
 void options()
 {
     cout<<"\n01.Resume / Curriculum Vitae(CV) \n02.Job Application Letter \n03.Leave Application \n04.Invoice";
@@ -33,34 +34,38 @@ void options()
     cout<<"\n15.Business Letter \n16.Notice \n17.Memo\n";
 }
 
+//company options
 void option2()
 {
     cout<<"\n01.Invoice \n02.Receipt \n03.Quotation \n04.Purchase Order \n05.Salary Slip";
     cout<<"\n06.Meeting Minutes \n07.Certificate \n08.Business Letter \n9.Notice \n10.Memo";
 }
-int main(){
+
+int main()
+{
 
     cout<<string(40,'-')<<" DocCreator "<<string(40,'-');
 
+    bool state2 = true;
     string uchoice,rechoice,ct;
     string name, email, organization_name, address,phone,password, status;
     string sname, semail, sorganization_name, saddress,sphone;
 
-    while(true)
+    while(state2)
     {
         bool state = true;
         string username = login();
-        if(username=="guest")//user
+        if(username=="guest") //user
         {
 
             options();
             cout<<"\nWhat would you like to create today?"<<endl;
-            while(state)
+            while(state) // loop when invalid choice
             {
 
                 cout<<"Choice : ";
                 cin>>uchoice;
-                int fichoice=checkDigit(uchoice);//final choice
+                int fichoice=checkDigit(uchoice); //final choice
 
                 if(fichoice==0)
                 {
@@ -170,127 +175,148 @@ int main(){
         }
         else if(isalpha(username[0]))//company
         {
-        ifstream file("Data.txt");
-        string line;
+            ifstream file("Data.txt");
+            string line;
 
-        while (getline(file, line))
-        {
-            stringstream ss(line);
-
-
-
-            getline(ss, name, '|');
-            getline(ss, password, '|');
-            getline(ss, email, '|');
-            getline(ss, organization_name, '|');
-            getline(ss, address, '|');
-            getline(ss, phone, '|');
-            getline(ss, status, '|');
-
-            if (name == username)
+            while (getline(file, line))
             {
-                sname = name;
-                semail = email;
-                sorganization_name = organization_name;
-                saddress = address ;
-                sphone = phone;
+                stringstream ss(line);
 
-                break;
+
+
+                getline(ss, name, '|');
+                getline(ss, password, '|');
+                getline(ss, email, '|');
+                getline(ss, organization_name, '|');
+                getline(ss, address, '|');
+                getline(ss, phone, '|');
+                getline(ss, status, '|');
+
+                if (name == username)
+                {
+                    sname = name;
+                    semail = email;
+                    sorganization_name = organization_name;
+                    saddress = address ;
+                    sphone = phone;
+
+                    break;
+                }
             }
-        }
-            option2();
-            cout<<"\nWhat would you like to create today?\n"<<endl;
-            while(state)
+
+            while(state2)
             {
+                option2();
+                cout<<"\nWhat would you like to create today?\n"<<endl;
                 cout<<"Choice : ";
                 cin>>uchoice;
-                int fichoice=checkDigit(uchoice);//final choice
-
-                if(fichoice==0)
+                while(state)
                 {
-                    cout<<"Invalid Choice\n\n";
+
+                    int fichoice=checkDigit(uchoice);//final choice
+
+                    if(fichoice==0)
+                    {
+                        cout<<"Invalid Choice\n\n";
+                    }
+                    else
+                    {
+                        switch(fichoice)
+                        {
+                        case 1:
+                            invoice(sname, saddress, sphone, semail);
+                            update_docCount("Invoice Generated");
+                            state=false;
+                            break;
+                        case 2:
+                            receipt(sname);
+                            update_count(username);
+                            update_docCount("Receipt Generated");
+                            state=false;
+                            break;
+                        case 3:
+                            quotation(sname, saddress,sphone,semail);
+                            update_count(username);
+                            update_docCount("Quotation Generated");
+                            state=false;
+                            break;
+                        case 4:
+                            purchase_order(sname, saddress);
+                            update_count(username);
+                            update_docCount("Purchase Order Generated");
+                            state=false;
+                            break;
+                        case 5:
+                            salary_slip(sname,saddress,sphone);
+                            update_docCount("Salary Slip Generated");
+                            state=false;
+                            break;
+                        case 6:
+                            meeting_minutes(sname);
+                            update_docCount("Meeting Minutes Generated");
+                            state=false;
+                            break;
+                        case 7:
+                            Certificate(sorganization_name);
+                            update_count(username);
+                            update_docCount("Certificate Generated");
+                            state=false;
+                            break;
+                        case 8:
+                            business(sorganization_name, saddress);
+                            update_count(username);
+                            update_docCount("Business Letter Generated");
+                            state=false;
+                            break;
+                        case 9:
+                            notice(sorganization_name,saddress);
+                            update_count(username);
+                            update_docCount("Notice Generated");
+                            state=false;
+                            break;
+                        case 10:
+                            memo(sorganization_name);
+                            update_count(username);
+                            update_docCount("Memo Generated");
+                            state=false;
+                            break;
+                        default:
+                            cout<<"Invalid Choice\n\n";
+
+                        }
+
+                    }
+                }
+                cout<<"\nWant to continue?(Y/N) : ";
+                cin>>rechoice;
+                if(rechoice=="Y" || rechoice=="y")
+                {
+                    state=true;
+                    continue;
                 }
                 else
                 {
-                    switch(fichoice)
-                    {
-                    case 1:
-                        invoice(sname, saddress, sphone, semail);
-                        update_docCount("Invoice Generated");
-                        state=false;
-                        break;
-                    case 2:
-                        receipt(sname);
-                        update_count(username);
-                        update_docCount("Receipt Generated");
-                        state=false;
-                        break;
-                    case 3:
-                        quotation(sname, saddress,sphone,semail);
-                        update_count(username);
-                        update_docCount("Quotation Generated");
-                        state=false;
-                        break;
-                    case 4:
-                        purchase_order(sname, saddress);
-                        update_count(username);
-                        update_docCount("Purchase Order Generated");
-                        state=false;
-                        break;
-                    case 5:
-                        salary_slip(sname,saddress,sphone);
-                        update_docCount("Salary Slip Generated");
-                        state=false;
-                        break;
-                    case 6:
-                        meeting_minutes(sname);
-                        update_docCount("Meeting Minutes Generated");
-                        state=false;
-                        break;
-                    case 7:
-                        Certificate(sorganization_name);
-                        update_count(username);
-                        update_docCount("Certificate Generated");
-                        state=false;
-                        break;
-                    case 8:
-                        business(sorganization_name, saddress);
-                        update_count(username);
-                        update_docCount("Business Letter Generated");
-                        state=false;
-                        break;
-                    case 9:
-                        notice(sorganization_name,saddress);
-                        update_count(username);
-                        update_docCount("Notice Generated");
-                        state=false;
-                        break;
-                    case 10:
-                        memo(sorganization_name);
-                        update_count(username);
-                        update_docCount("Memo Generated");
-                        state=false;
-                        break;
-                    default:
-                        cout<<"Invalid Choice\n\n";
-
-                    }
-
+                    state2=false;
+                    break;
                 }
+
             }
-
         }
 
-        cout<<"\nWant to continue?(Y/N) : ";
-        cin>>rechoice;
-        if(rechoice=="Y" || rechoice=="y")
+        if(state2)
         {
-            continue;
-        }
-        else
-        {
-            cout<<"\nThank You for using DocCreator\n";
-            break;
+            cout<<"\nWant to continue?(Y/N) : ";
+            cin>>rechoice;
+            if(rechoice=="Y" || rechoice=="y")
+            {
+                continue;
+            }
+            else
+            {
+                break;
+            }
         }
     }
+    cout<<"\nThank You for using DocCreator\n";
+    return 0;
 }

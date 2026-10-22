@@ -61,7 +61,7 @@ void notice(string sorganization_name, string saddress)
     int month = localTime->tm_mon + 1;
     int year = localTime->tm_year + 1900;
 
-    stringstream ss(organizationName); // generate one word from multiple words (Arafat Hossain Rizve)== Arafat
+    stringstream ss(organizationName);
     ss >> filename;
 
     cout<<"\nEnter file location : ";
@@ -72,11 +72,11 @@ void notice(string sorganization_name, string saddress)
     int l = path.length();
     if(path[l-1]=='\\')
     {
-        path2 = path + filename + "(Invoice)" + time + ".html"; //E:\\arafat(Resume)_2026-07-28_1237.html
+        path2 = path + filename + "(Invoice)" + time + ".html";
     }
     else
     {
-        path2 = path + "\\\\" + filename + "(Invoice)" + time + ".html"; //E:\\DocCreator\\arafat(Resume)_2026-07-28_1237.html
+        path2 = path + "\\\\" + filename + "(Invoice)" + time + ".html";
     }
 
     ofstream file(path2);

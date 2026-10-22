@@ -90,11 +90,11 @@ void Cover_page()
 
     if(path[l-1]=='\\')
     {
-        path2 = path + filename + time + ".html"; //E:\\arafat(Resume)_2026-07-28_1237.html
+        path2 = path + filename + time + ".html";
     }
     else
     {
-        path2 = path + "\\\\" + filename + time + ".html"; //E:\\DocCreator\\arafat(Resume)_2026-07-28_1237.html
+        path2 = path + "\\\\" + filename + time + ".html";
     }
     ofstream file(path2);
 

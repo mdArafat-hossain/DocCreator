@@ -137,7 +137,7 @@ void receipt(string sname)
 
     cout<<"\nEnter file location : ";
     getline(cin,ppath);
-    stringstream ss(businessName); // generate one word from multiple words (Arafat Hossain Rizve)== Arafat
+    stringstream ss(businessName);
     ss >> filename;
 
     string path = file_path(ppath);
@@ -145,11 +145,11 @@ void receipt(string sname)
     int l = path.length();
     if(path[l-1]=='\\')
     {
-        path2 = path + filename + "(Receipt)" + time + ".html"; //E:\\arafat(Resume)_2026-07-28_1237.html
+        path2 = path + filename + "(Receipt)" + time + ".html";
     }
     else
     {
-        path2 = path + "\\\\" + filename + "(Receipt)" + time + ".html"; //E:\\DocCreator\\arafat(Resume)_2026-07-28_1237.html
+        path2 = path + "\\\\" + filename + "(Receipt)" + time + ".html";
     }
 
 

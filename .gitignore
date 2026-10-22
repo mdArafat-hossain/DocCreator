@@ -13,3 +13,11 @@ obj/
 
 # Generated HTML
 html_files/
+
+# Compiled files
+obj/
+bin/
+
+# Code::Blocks generated files
+*.depend
+*.layout
